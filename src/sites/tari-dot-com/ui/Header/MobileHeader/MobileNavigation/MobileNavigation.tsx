@@ -68,6 +68,10 @@ export default function MobileNavigation() {
                         <NavLink as={Link} href="/downloads" onClick={handleLinkClick}>
                             Downloads
                         </NavLink>
+
+                        <NavLink as={Link} href="/updates" onClick={handleLinkClick}>
+                            Project Updates
+                        </NavLink>
                     </GroupTwo>
                 )}
 
@@ -82,12 +86,7 @@ export default function MobileNavigation() {
                             <ChevronLeft />
                         </NavLink>
 
-                        <NavLink
-                            as={Link}
-                            href="https://community.tari.com/"
-                            target="_blank"
-                            onClick={handleLinkClick}
-                        >
+                        <NavLink as={Link} href="https://community.tari.com/" target="_blank" onClick={handleLinkClick}>
                             Forum
                         </NavLink>
 
@@ -146,6 +145,10 @@ export default function MobileNavigation() {
                     <GroupTwo initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="group-build">
                         <NavLink onClick={() => setActiveGroup('main')}>
                             <ChevronLeft />
+                        </NavLink>
+
+                        <NavLink as={Link} href="/ootle" onClick={handleLinkClick}>
+                            <span>The Ootle</span>
                         </NavLink>
 
                         <NavLink as={Link} href="https://ootle.tari.com/" target="_blank" onClick={handleLinkClick}>

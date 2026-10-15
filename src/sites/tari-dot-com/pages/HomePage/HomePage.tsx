@@ -2,6 +2,7 @@
 
 import { Wrapper } from './styles';
 
+import OotleAnnouncement from './sections/OotleAnnouncement/OotleAnnouncement';
 import IntroSection from './sections/IntroSection/IntroSection';
 import VideoSection from './sections/VideoSection/VideoSection';
 import EcosystemSection from './sections/EcosystemSection/EcosystemSection';
@@ -12,11 +13,12 @@ import Modals from '../../ui/Modals/Modals';
 export default function HomePage() {
     return (
         <Wrapper>
+            <OotleAnnouncement />
             <IntroSection />
             <VideoSection />
             <EcosystemSection />
             <TariSection />
-            <FAQSection maxEntries={5} />
+            <FAQSection maxEntries={5} level={2} />
             <Modals />
         </Wrapper>
     );

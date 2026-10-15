@@ -35,7 +35,7 @@ export default function TokenomicsPage() {
                     Let&apos;s get down to brass tacks. The Tari network has two layers: layer 1 (aka the Minotari
                     network) and layer 2 (aka the Ootle network). Layer 1 is secured by proof of work. Miners are
                     rewarded with Minotari tokens (XTM). Layer 2 is a Byzantine fault-tolerant network fueled by the
-                    Tari token (XTR).
+                    Tari token (TARI).
                 </p>
                 <p>
                     There will be a total supply of 21 billion XTM emitted gradually using an exponential decay function
@@ -47,7 +47,7 @@ export default function TokenomicsPage() {
                     newly emitted tokens (100%) will go exclusively to miners who secure the Tari network.
                 </p>
                 <p>
-                    There is a deep relationship between XTM tokens and XTR tokens. The only way to create XTR is to
+                    There is a deep relationship between XTM tokens and TARI tokens. The only way to create TARI is to
                     burn XTM 1:1. A transaction fee-oriented burn mechanism on the Ootle network will help ensure
                     overall token supply equilibrium. There is much to cover, so let&apos;s start with the Tari Layer 1
                     proof of work model and XTM.&nbsp;
@@ -92,18 +92,18 @@ export default function TokenomicsPage() {
                 </p>
                 <p>
                     <span>
-                        Network rewards are split 50/50, with half of the Tari block reward going towards merge mining
-                        performed with the RandomX hashing algorithm and{' '}
+                        Network rewards are split evenly across Tari&apos;s four proof of work lanes: RandomX
+                        merge-mined with Monero (RxM), Tari-native RandomX (RxT), SHA3x, and Cuckaroo (C29). Each lane
+                        targets{' '}
                     </span>
-                    <strong>50%</strong>
+                    <strong>25%</strong>
                     {` `}
                     <span>
-                        of the block rewards going to Tari standalone miners using the SHA3x hashing algorithm. RandomX
-                        is a proof of work (PoW) algorithm designed to be ASIC-resistant by optimizing for
-                        general-purpose CPUs, ensuring fairer, more accessible, and more decentralized mining. The
-                        merge-mining aspect of Tari will enable existing RandomX miners to increase their revenue and
-                        keep them successfully mining both the RandomX chain and Tari for the foreseeable future. The
-                        Tari protocol bakes this 50/50 distribution into the consensus rules.
+                        of the block rewards, and the Tari protocol bakes this equal distribution into the consensus
+                        rules. RandomX is a proof of work (PoW) algorithm designed to be ASIC-resistant by optimizing
+                        for general-purpose CPUs, ensuring fairer, more accessible, and more decentralized mining. The
+                        merge-mining aspect of Tari enables existing RandomX miners to increase their revenue and keep
+                        them successfully mining both the Monero chain and Tari for the foreseeable future.
                     </span>
                 </p>
                 <p>
@@ -113,7 +113,7 @@ export default function TokenomicsPage() {
                     <span>
                         All dapp (tapp!) activity will occur on the Tari Layer 2 (aka the Ootle), including DeFi, NFTs,
                         SocialFi, GameFi, stablecoins, streaming payments, and more. Tari contributors have designed an
-                        elegant relationship between the Layer 1 tokens (XTM) and the Layer 2 tokens (XTR) to offset
+                        elegant relationship between the Layer 1 tokens (XTM) and the Layer 2 tokens (TARI) to offset
                         supply inflation and maintain a soft peg between them. Tari contributors achieve the interplay
                         between the two tokens through a token model called the
                     </span>{' '}
@@ -123,8 +123,8 @@ export default function TokenomicsPage() {
                     <span>.</span>
                 </p>
                 <p>
-                    In the Tari Turbine Model, the only way to create XTR tokens is to burn XTM tokens on the Layer 1
-                    and redeem the XTR 1:1 on the Ootle network. As a result, there is a one-way relationship between
+                    In the Tari Turbine Model, the only way to create TARI tokens is to burn XTM tokens on the Layer 1
+                    and redeem the TARI 1:1 on the Ootle network. As a result, there is a one-way relationship between
                     the two tokens. On the Ootle, a portion of the transaction fee is paid to validators, and a portion
                     of the transaction fee is burned. This token-burning mechanism creates a powerful economic model
                     where Tari miners can confidently secure the network forever, and at scale, the overall Tari token
@@ -134,7 +134,7 @@ export default function TokenomicsPage() {
                 <Image src={Image3.src} alt="" />
 
                 <p>
-                    The Turbine Model enables Tari to maintain a soft 1:1 peg between Minotari (XTM) and Tari (XTR)
+                    The Turbine Model enables Tari to maintain a soft 1:1 peg between Minotari (XTM) and Tari (TARI)
                     without using complicated peg-out mechanisms like drive chains or federated pegs.&nbsp;
                 </p>
 
@@ -142,14 +142,14 @@ export default function TokenomicsPage() {
 
                 <p>
                     Other things being equal, greater activity on the Ootle depletes the supply of Tari tokens faster.
-                    Mining rewards on the Minotari network in the form of XTM replenishes the supply of XTR.
+                    Mining rewards on the Minotari network in the form of XTM replenishes the supply of TARI.
                 </p>
                 <p>
-                    The Throttle actively controls the burn rate for XTR associated with every transaction on the Ootle.
-                    The Throttle is an algorithm run via consensus by validator nodes that periodically adjusts the burn
-                    rate to maintain the stability of the Tari ecosystem. The Throttle has three priorities in
-                    decreasing order of importance: to i) maintain the XTM:XTR peg, ii) maintain a stable supply of XTR
-                    + XTM, and iii) maintain a total token supply of 21 billion tokens.
+                    The Throttle actively controls the burn rate for TARI associated with every transaction on the
+                    Ootle. The Throttle is an algorithm run via consensus by validator nodes that periodically adjusts
+                    the burn rate to maintain the stability of the Tari ecosystem. The Throttle has three priorities in
+                    decreasing order of importance: to i) maintain the XTM:TARI peg, ii) maintain a stable supply of
+                    TARI + XTM, and iii) maintain a total token supply of 21 billion tokens.
                 </p>
                 <p>
                     Tari’s fast finality, sub-penny transaction fees, infinite scalability, programmable confidentiality
@@ -182,7 +182,6 @@ export default function TokenomicsPage() {
 
                 <Image src={Image5.src} alt="" />
 
-            
                 <p>
                     <strong>Community</strong>
                 </p>
@@ -246,8 +245,8 @@ export default function TokenomicsPage() {
                     <span>
                         Before Tari was a protocol, it was a vision. Participants are the early supporters such as
                         Blockchain Capital, Collab+Currency, gmoney, loomdart, DCF GOD, DV Chain, Kamal Ravikant, Bryan
-                        Pellegrino, Ayon, Messi, Pantera, Hack VC, Paris Hilton, eGirl Capital, Kilowatt,
-                        Redpoint, Trinity, and many others who stepped up to help make Tari a reality.{' '}
+                        Pellegrino, Ayon, Messi, Pantera, Hack VC, Paris Hilton, eGirl Capital, Kilowatt, Redpoint,
+                        Trinity, and many others who stepped up to help make Tari a reality.{' '}
                     </span>
                     <strong>12%</strong>
                     <span>

@@ -21,7 +21,7 @@ export const Wrapper = styled(motion.div)<{ $activeGroup: 'main' | 'about' | 'co
     ${({ $activeGroup }) =>
         $activeGroup === 'about' &&
         css`
-            height: 353px;
+            height: 401px;
         `}
 
     ${({ $activeGroup }) =>
@@ -56,6 +56,13 @@ export const NavLink = styled.button`
         display: flex;
         align-items: center;
         gap: 8px;
+    }
+
+    &[target='_blank']::after {
+        content: '↗';
+        font-size: 14px;
+        opacity: 0.6;
+        margin-left: auto;
     }
 `;
 

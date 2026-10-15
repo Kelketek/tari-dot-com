@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface TabItemProps {
     $isActive: boolean;
@@ -13,7 +13,9 @@ export const TabItem = styled.div<TabItemProps>`
     gap: 10px;
     color: ${({ $isActive }) => ($isActive ? '#b0d636' : '#fff')};
     background-color: ${({ $isActive }) => ($isActive ? 'rgba(255, 255, 255, 0.10)' : 'transparent')};
-    transition: background-color 0.5s, color 0.5s;
+    transition:
+        background-color 0.5s,
+        color 0.5s;
 
     &:hover {
         cursor: pointer;

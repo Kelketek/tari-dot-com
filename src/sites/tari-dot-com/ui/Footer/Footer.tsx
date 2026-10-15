@@ -2,6 +2,7 @@
 
 import TariLogo from '../TariLogo/TariLogo';
 import SocialLinks from './components/SocialLinks/SocialLinks';
+import NewLoreBadge from './components/NewLoreBadge/NewLoreBadge';
 
 import {
     Wrapper,
@@ -67,13 +68,11 @@ export default function Footer() {
                         <Column>
                             <Title>Community</Title>
                             <Links>
+                                <StyledLink href="/updates">Project Updates</StyledLink>
                                 <StyledLink href="https://community.tari.com/" target="_blank">
                                     Forum
                                 </StyledLink>
-                                <StyledLink
-                                    href="https://rfc.tari.com/TIP-0002_tari_community_charter"
-                                    target="_blank"
-                                >
+                                <StyledLink href="https://rfc.tari.com/TIP-0002_tari_community_charter" target="_blank">
                                     Tari Community Charter
                                 </StyledLink>
                                 <StyledLink
@@ -94,6 +93,7 @@ export default function Footer() {
                                 <Link href="/user_agreement">User Agreement</Link>
                             </LegalLinks>
                         </Copyright>
+                        <NewLoreBadge />
                         <SocialLinks />
                     </BottomWrapper>
                 </Middle>

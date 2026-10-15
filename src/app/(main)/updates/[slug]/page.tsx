@@ -1,30 +1,38 @@
-import { getUpdatesBySlug, getAllUpdates } from '@/services/lib/updates';
+import { getUpdatesBySlug, getAllUpdates, Update } from '@/services/lib/updates';
 import PostPage from '@/sites/tari-dot-com/pages/UpdatesPage/PostPage';
 
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import { canonicalUrl } from '@/utils/metadata';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
     try {
         const { slug } = await params;
 
         if (!slug) {
-            return { title: 'Tari / Updates / Post Not Found' };
+            return { title: 'Post Not Found' };
         }
 
         const post = await getUpdatesBySlug(slug);
 
         if (!post) {
-            return { title: 'Tari / Updates / Post Not Found' };
+            return { title: 'Post Not Found' };
         }
-
-        return { title: `Tari / Updates / ${post.title}` };
+        return {
+            title: `Updates / ${post.title}`,
+            description: post.excerpt || `Project update for ${post.date}`,
+            ...canonicalUrl(`/updates/${slug}`),
+        };
     } catch (error) {
         console.error('Error in generateMetadata:', error);
-        return { title: 'Tari / Updates' };
+        return { title: 'Update' };
     }
-}
+};
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+    let post: Update | undefined;
+    let nextPosts: Update[] = [];
+
     try {
         const { slug } = await params;
 
@@ -32,7 +40,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             notFound();
         }
 
-        const post = await getUpdatesBySlug(slug);
+        post = await getUpdatesBySlug(slug);
 
         if (!post) {
             notFound();
@@ -40,14 +48,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
         const allPosts = await getAllUpdates();
 
-        const nextPosts = allPosts
+        nextPosts = allPosts
             .filter((p) => p.slug !== slug)
             .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
             .slice(0, 3);
-
-        return <PostPage post={post} nextPosts={nextPosts} />;
     } catch (error) {
         console.error('Error fetching post:', error);
         notFound();
     }
+
+    return <PostPage post={post} nextPosts={nextPosts} />;
 }

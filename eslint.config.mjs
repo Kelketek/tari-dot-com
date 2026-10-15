@@ -39,6 +39,9 @@ const eslintConfig = [
             'jsx-a11y/alt-text': 'error',
             'jsx-a11y/aria-role': 'error',
 
+            // Image component requires service we're not using.
+            '@next/next/no-img-element': 'off',
+
             // React Compiler rules newly enabled by Next 16's bundled
             // eslint-plugin-react-hooks v6. Surfaced as warnings pending a
             // dedicated cleanup pass rather than blocking the version bump.
@@ -58,6 +61,7 @@ const eslintConfig = [
             '@typescript-eslint/no-require-imports': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
             'no-unused-vars': 'off',
+            'no-console': 'off',
         },
     },
     {
